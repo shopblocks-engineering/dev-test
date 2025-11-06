@@ -21,7 +21,7 @@ interface BreedsResource
      *
      * @throws \Illuminate\Http\Client\ConnectionException
      * @throws \Illuminate\Http\Client\RequestException
-     * @return \Illuminate\Support\Collection<int, \App\Http\Services\CatApi\Dto\Breed>
+     * @return \Illuminate\Support\Collection<int, \App\Contracts\Api\Breed>
      */
     public function list(): Collection;
 }

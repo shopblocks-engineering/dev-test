@@ -16,7 +16,7 @@ class Breed implements BreedContract
      * Breed constructor.
      */
     public function __construct(
-        public readonly int $id,
+        public readonly string $id,
         public readonly string $name
     ) {
     }
@@ -24,7 +24,7 @@ class Breed implements BreedContract
     /**
      * New instance of breed from array
      *
-     * @param array{id: int, name: string} $breed
+     * @param array{id: string, name: string} $breed
      */
     public static function fromArray(array $breed): Breed
     {
