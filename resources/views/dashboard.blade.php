@@ -29,6 +29,23 @@
             <i class="ph ph-magnifying-glass position-absolute searchInput-icon"></i>
         </div>
     </form>
+
+    <table id="breeds-table" class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Breed</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($breeds as $breed)
+            <tr>
+                <th scope="row">{{ $breed->id }}</th>
+                <td>{{ $breed->name }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection
 
 @push('scripts')
