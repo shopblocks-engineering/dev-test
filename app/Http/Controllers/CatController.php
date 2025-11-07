@@ -22,6 +22,7 @@ class CatController extends Controller
 
     /**
      * Display a listing of cat breeds.
+     *
      */
     public function index(): View
     {

@@ -12,8 +12,6 @@ class CatService
 
     /**
      * Constructor to initialize the HTTP client.
-     *
-     * @param Client|null $client
      */
     public function __construct(?Client $client= null)
     {
@@ -27,8 +25,6 @@ class CatService
 
     /**
      * Fetch all cat breeds from The Cat API.
-     *
-     * @return array
      */
     public function allBreeds(): array
     {
@@ -45,9 +41,6 @@ class CatService
 
     /**
      * Find a specific breed by its ID from The Cat API.
-     *
-     * @param string $breedId
-     * @return array|null
      */
     public function findBreedById(string $breedId): ?array
     {
@@ -67,9 +60,6 @@ class CatService
 
     /**
      * Decode the JSON response from The Cat API.
-     *
-     * @param $response
-     * @return array
      */
     private function decodeResponse($response): array
     {
