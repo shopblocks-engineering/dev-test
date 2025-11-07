@@ -1,6 +1,22 @@
 # Shopblocks PHP Developer Test: Pet-é-dex 
 
-Welcome to the **Shopblocks PHP Developer Test: Pet-é-dex**! This project evaluates your skills in working with APIs, building user interfaces, and implementing core functionality using PHP and Laravel. While design skills are a bonus, we will focus mainly on usability, performance, and security.
+## Teo Notes
+Changes:
+- Removed key from key.example for security reasons
+- Cache the api results to increase speed and responsiveness
+- Used Guzzle instead of Http
+- Kept Controller clean by using Service instead
+- Redirect to Http.Cat if it returns 404
+- Use services.php
+
+Things i would add given more time: 
+- Query the api directly instead of filtering the blade file
+- Create more tests for the app
+- Add pagination
+- Use Vue instead
+- Make it prettier
+
+
 
 ## Introduction
 
