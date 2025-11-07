@@ -1,20 +1,27 @@
 # Shopblocks PHP Developer Test: Pet-é-dex 
 
 ## Teo Notes
-Changes:
-- Removed key from key.example for security reasons
-- Cache the api results to increase speed and responsiveness
-- Used Guzzle instead of Http
-- Kept Controller clean by using Service instead
-- Redirect to Http.Cat if it returns 404
-- Use services.php
+Here’s a quick rundown of what I did:
 
-Things i would add given more time: 
-- Query the api directly instead of filtering the blade file
-- Create more tests for the app
-- Add pagination
-- Use Vue instead
-- Make it prettier
+- Removed the API key from the example `.env`
+  Didn’t want to leave sensitive stuff lying around. Bots scan GitHub for keys all the time, so better safe than sorry.
+
+- Cached the API results
+  I added caching for both the full list of breeds and individual breed details. This keeps the site fast, avoids hammering the API, and respects their rate limits.
+
+- Kept the controller simple with a `CatService`
+  All the API calls and caching live in the service now, so the controller just handles requests and returns views. Makes it easier to read and maintain.
+
+- Redirect to http.cat on 404
+  Little fun touch and also handles missing data gracefully instead of breaking the page.
+
+If I had more time, here’s what I’d do next:
+
+- Query the API directly for searches instead of filtering in Blade, so results are accurate and performance stays solid even with a big list.
+- Add more tests to cover API calls, caching, and edge cases.
+- Pagination to keep the pages snappy for large datasets.
+- Vue.js for smoother, interactive searching and filtering.
+- Better styling to make it look more polished and professional.
 
 
 
