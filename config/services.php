@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'cat-api' => [
+        'url' => env('CAT_API_URL', 'https://api.thecatapi.com/v1/'),
+        'key' => env('CAT_API_KEY'),
+    ]
+
 ];
