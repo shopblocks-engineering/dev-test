@@ -2,6 +2,14 @@
 
 @section('title', 'Breed')
 
+@push('style')
+    <style>
+        .card-text {
+            text-align: left;
+        }
+    </style>
+@endpush
+
 @section('content')
     <a href="{{ route('dashboard') }}">« Back</a>
 
@@ -15,6 +23,23 @@
                 @isset($image)
                     <img src="{{ $image->url }}" class="img-fluid rounded-start" alt="{{ $breed->name }}">
                 @endisset
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text"><strong>Name: </strong>{{ $breed->name }}</p>
+                    @isset($breed->description)
+                        <p class="card-text"><strong>Description: </strong>{{ $breed->description }}</p>
+                    @endisset
+                    @isset($breed->origin)
+                        <p class="card-text"><strong>Origin: </strong>{{ $breed->origin }}</p>
+                    @endisset
+                    @isset($breed->temperament)
+                        <p class="card-text"><strong>Temperament: </strong>{{ $breed->temperament }}</p>
+                    @endisset
+                    @isset($breed->wikipediaUrl)
+                        <p class="card-text"><strong>Wikipedia URL: </strong><a href="{{ $breed->wikipediaUrl }}">{{ $breed->wikipediaUrl }}</a></p>
+                    @endisset
+                </div>
             </div>
         </div>
     </div>
