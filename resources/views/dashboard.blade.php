@@ -15,6 +15,10 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+        .table {
+            margin-top: 30px;
+        }
     </style>
 @endpush
 
@@ -29,12 +33,46 @@
             <i class="ph ph-magnifying-glass position-absolute searchInput-icon"></i>
         </div>
     </form>
+
+    <table id="breeds-table" class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Breed</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach ($breeds as $breed)
+            <tr data-row-name="{{ $breed->name }}">
+                <th scope="row">{{ $breed->id }}</th>
+                <td><a href="{{ route('breed', ['breedId' => $breed->id]) }}">{{ $breed->name }}</a></td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection
 
 @push('scripts')
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('searchInput').focus();
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const breedsTableRows = [...document.querySelectorAll('#breeds-table tbody tr')];
+
+            searchInput.focus();
+
+            /**
+             * Decided to use straightforward JS to handle the filter logic. Didn't see the need to use anything more
+             * advanced (Vue.js, Alpine.js etc)
+             */
+            searchInput.addEventListener('keyup', (event) => {
+                const value = event.target.value.toLowerCase();
+
+                breedsTableRows.forEach((row) => {
+                    row.style.display = row.dataset.rowName.toLowerCase().indexOf(value) > -1
+                        ? 'table-row'
+                        : 'none';
+                })
+            });
 
             const titles = [
                 "Looking for a Dog Breed?",
