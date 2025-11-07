@@ -35,7 +35,7 @@
             });
         @endphp
 
-        <div class="row">
+        <div class="row justify-content-center">
             @forelse($filtered as $breed)
                 <div class="col-md-3 mb-4">
                     <a href="{{ route('cats.show', $breed['id']) }}" class="text-decoration-none text-dark">
