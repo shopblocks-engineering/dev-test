@@ -14,7 +14,7 @@ interface BreedsResource
      * @throws \Illuminate\Http\Client\ConnectionException
      * @throws \Illuminate\Http\Client\RequestException
      */
-    public function get(int $breedId): Breed;
+    public function get(string $breedId): Breed;
 
     /**
      * List breeds

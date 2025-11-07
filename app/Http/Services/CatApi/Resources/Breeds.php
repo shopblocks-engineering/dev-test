@@ -25,7 +25,7 @@ readonly class Breeds implements BreedsResource
     /**
      * @inheritDoc
      */
-    public function get(int $breedId): BreedContract
+    public function get(string $breedId): BreedContract
     {
         return BreedDto::fromArray($this->client->send(Method::GET, 'breeds/' . $breedId)->json());
     }

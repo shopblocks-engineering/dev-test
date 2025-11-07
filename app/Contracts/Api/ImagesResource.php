@@ -12,5 +12,5 @@ interface ImagesResource
      * @throws \Illuminate\Http\Client\ConnectionException
      * @throws \Illuminate\Http\Client\RequestException
      */
-    public function get(int $imageId): Image;
+    public function get(string $imageId): Image;
 }

@@ -23,7 +23,7 @@ readonly class Images implements ImagesResource
     /**
      * @inheritDoc
      */
-    public function get(int $imageId): ImageContract
+    public function get(string $imageId): ImageContract
     {
         return ImageDto::fromArray($this->client->send(Method::GET, 'images/' . $imageId)->json());
     }

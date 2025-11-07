@@ -15,6 +15,10 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+        .table {
+            margin-top: 30px;
+        }
     </style>
 @endpush
 
@@ -39,9 +43,9 @@
         </thead>
         <tbody>
         @foreach ($breeds as $breed)
-            <tr data-row-name="{{ $breed->name }}" style="display: none">
+            <tr data-row-name="{{ $breed->name }}">
                 <th scope="row">{{ $breed->id }}</th>
-                <td>{{ $breed->name }}</td>
+                <td><a href="{{ route('breed', ['breedId' => $breed->id]) }}">{{ $breed->name }}</a></td>
             </tr>
         @endforeach
         </tbody>

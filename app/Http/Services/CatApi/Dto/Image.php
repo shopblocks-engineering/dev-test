@@ -16,7 +16,7 @@ class Image implements ImageContract
      * Image constructor.
      */
     public function __construct(
-        public readonly int $id,
+        public readonly string $id,
         public readonly string $url
     ) {
     }
@@ -24,7 +24,7 @@ class Image implements ImageContract
     /**
      * New instance of image from array
      *
-     * @param array{id: int, url: string} $image
+     * @param array{id: string, url: string} $image
      */
     public static function fromArray(array $image): Image
     {
