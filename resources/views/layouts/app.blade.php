@@ -29,7 +29,7 @@
     <p class="mb-0"><i class="ph ph-copyright"></i> 2024 Shopblocks Dev Test</p>
 </footer>
 
-<script src="{{ asset('js/boostrap5-3.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap5.3.min.js') }}"></script>
 @stack('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", function() {

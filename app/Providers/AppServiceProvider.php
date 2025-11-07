@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\PetApi;
+use App\Services\CatService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
