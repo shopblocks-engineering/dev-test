@@ -9,6 +9,7 @@ use App\Contracts\ListBreedsService as ListBreedsServiceContract;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 readonly class ListBreedsService implements ListBreedsServiceContract
@@ -27,7 +28,7 @@ readonly class ListBreedsService implements ListBreedsServiceContract
     public function execute(): Collection
     {
         try {
-            return $this->client->breeds()->list();
+            return Cache::remember('list', 3600, fn () => $this->client->breeds()->list());
         } catch (Exception $exception) {
             Log::error($exception->getMessage());
 

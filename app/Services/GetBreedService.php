@@ -9,6 +9,7 @@ use App\Contracts\Api\Client;
 use App\Contracts\GetBreedService as GetBreedServiceContract;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 readonly class GetBreedService implements GetBreedServiceContract
@@ -24,10 +25,10 @@ readonly class GetBreedService implements GetBreedServiceContract
     /**
      * @inheritDoc
      */
-    public function execute(int $breedId): ?Breed
+    public function execute(string $breedId): ?Breed
     {
         try {
-            return $this->client->breeds()->get($breedId);
+            return Cache::remember('breed_' . $breedId, 3600, fn () => $this->client->breeds()->get($breedId));
         } catch (Exception $exception) {
             Log::error($exception->getMessage());
 

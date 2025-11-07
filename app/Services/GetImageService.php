@@ -9,6 +9,7 @@ use App\Contracts\Api\Image;
 use App\Contracts\GetImageService as GetImageServiceContract;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 readonly class GetImageService implements GetImageServiceContract
@@ -24,10 +25,10 @@ readonly class GetImageService implements GetImageServiceContract
     /**
      * @inheritDoc
      */
-    public function execute(int $imageId): ?Image
+    public function execute(string $imageId): ?Image
     {
         try {
-            return $this->client->images()->get($imageId);
+            return Cache::remember('image_' . $imageId, 3600, fn () => $this->client->images()->get($imageId));
         } catch (Exception $exception) {
             Log::error($exception->getMessage());
 
