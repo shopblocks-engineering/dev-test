@@ -1,6 +1,29 @@
 # Shopblocks PHP Developer Test: Pet-é-dex 
 
-Welcome to the **Shopblocks PHP Developer Test: Pet-é-dex**! This project evaluates your skills in working with APIs, building user interfaces, and implementing core functionality using PHP and Laravel. While design skills are a bonus, we will focus mainly on usability, performance, and security.
+## Teo Notes
+Here’s a quick rundown of what I did:
+
+- Removed the API key from the example `.env`
+  Didn’t want to leave sensitive stuff lying around. Bots scan GitHub for keys all the time, so better safe than sorry.
+
+- Cached the API results
+  I added caching for both the full list of breeds and individual breed details. This keeps the site fast, avoids hammering the API, and respects their rate limits.
+
+- Kept the controller simple with a `CatService`
+  All the API calls and caching live in the service now, so the controller just handles requests and returns views. Makes it easier to read and maintain.
+
+- Redirect to http.cat on 404
+  Little fun touch and also handles missing data gracefully instead of breaking the page.
+
+If I had more time, here’s what I’d do next:
+
+- Query the API directly for searches instead of filtering in Blade, so results are accurate and performance stays solid even with a big list.
+- Add more tests to cover API calls, caching, and edge cases.
+- Pagination to keep the pages snappy for large datasets.
+- Vue.js for smoother, interactive searching and filtering.
+- Better styling to make it look more polished and professional.
+
+
 
 ## Introduction
 

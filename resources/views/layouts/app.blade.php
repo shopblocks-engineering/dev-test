@@ -7,7 +7,7 @@
     <meta name="description" content="Discover the world of pets, one paw at a time.">
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDI1NiAyNTYiPjxwYXRoIGQ9Ik0yNDAsMTA4YTI4LDI4LDAsMSwxLTI4LTI4QTI4LDI4LDAsMCwxLDI0MCwxMDhaTTcyLDEwOGEyOCwyOCwwLDEsMC0yOCwyOEEyOCwyOCwwLDAsMCw3MiwxMDhaTTkyLDg4QTI4LDI4LDAsMSwwLDY0LDYwLDI4LDI4LDAsMCwwLDkyLDg4Wm03MiwwYTI4LDI4LDAsMSwwLTI4LTI4QTI4LDI4LDAsMCwwLDE2NCw4OFptMjMuMTIsNjAuODZhMzUuMywzNS4zLDAsMCwxLTE2Ljg3LTIxLjE0LDQ0LDQ0LDAsMCwwLTg0LjUsMEEzNS4yNSwzNS4yNSwwLDAsMSw2OSwxNDguODIsNDAsNDAsMCwwLDAsODgsMjI0YTM5LjQ4LDM5LjQ4LDAsMCwwLDE1LjUyLTMuMTMsNjQuMDksNjQuMDksMCwwLDEsNDguODcsMCw0MCw0MCwwLDAsMCwzNC43My03MloiPjwvcGF0aD48L3N2Zz4=">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="{{ asset('js/phosphor-icons.js') }}"></script>
     @stack('style')
 </head>
