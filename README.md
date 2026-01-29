@@ -61,7 +61,7 @@ You are required to build a **Pokédex-style web app** (Pet-é-dex) that allows 
 | ^                      | I click on a pet breed in the list       | I am redirected to the pet's overview page                          |
 | I am on the Pet Overview page | The page loads                            | I can see an image, name, breed, and other details returned from the API |
 | ^                      | ^                                        | I can see a link back to the main page                              |
-| ^                      | ^                                        | I see the breed name in a <h2> tag with a class of `heading-breed-name` |
+| ^                      | ^                                        | I see the breed name in a `<h2>` tag with a class of `heading-breed-name` |
 
 ## API Information 
 
